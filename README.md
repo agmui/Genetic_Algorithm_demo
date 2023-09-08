@@ -17,3 +17,10 @@ cd build
 cmake ..
 make
 ```
+
+
+## General overview
+**UML diagram:**
+![uml diagram](pics/uml.png)
+**Example from the book:**
+![visual example](pics/evloution_flowchart.png)
