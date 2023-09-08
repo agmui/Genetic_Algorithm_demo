@@ -6,7 +6,7 @@ class Simulation{
     - population: Vector<Agents>
     - time: float
 
-    - mutaionParams[]: float
+    - mutationParams[]: float
     - mutationFuncs[]: Mutation
     - fitness: Fitness
     - selectionFuncs[]: Selection
@@ -50,18 +50,20 @@ Genome <|-- BinaryGenome
 Genome <|-- TravlingSailsmenGenome
 
 interface Mutation{
-    mutatePopulation(population: Vector<Agent>)
+    mutatePopulation(population: Vector<Agent>): void
 }
 class Recombination{
+    Recombination(params: float)
     mutatePopulation(population: Vector<Agent>)
     mutateAgents(agent1: Agent, agent2: Agent)
 }
 class Inversion{
+    Inversion(params: float)
     mutatePopulation(population: Vector<Agent>)
     mutateAgent(agent: Agent)
 }
 class Insertion{
-    mutatePopulation(population: Vector<Agent>)
+    mutate(population: Vector<Agent>)
     mutateAgents(agent1: Agent, agent2: Agent)
 }
 Mutation <|-- Recombination
@@ -70,16 +72,17 @@ Mutation <|-- Insertion
 
 ' allows for changing fitness function over time
 interface Fitness{
-    - fitnessValues: sortedMap
 
     + eval(population: Vector<Agent>)
-    - evalGenene(g: Genome): float
+    - evalGenome(g: Genome): float
     - sort(population: Vector<Agent>)
 }
 class Combination{
     'uses weighted sum of multiple fitness funcs demo?'
 }
 class MostOnes{
+    - fitnessValues: sortedMap
+
     + eval(population: Vector<BinaryBois>)
     - evalGenene(g: BinaryGenome): float
     - sort(population: Vector<BinaryBois>)
@@ -88,23 +91,25 @@ class ValueOfString{
     - max
     - min
     - avg
+    - fitnessValues: sortedMap
 
     + eval(population: Vector<BinaryBois>)
-    - evalGenene(g: BinaryGenome): float
+    - evalGenome(g: BinaryGenome): float
     - sort(population: Vector<BinaryBois>)
 
     'just to demo visitor design patern: https://refactoring.guru/design-patterns/visitor'
     + accept(v: Visitor)
 }
 Fitness <|-- MostOnes
+Fitness <|-- Combination
 Fitness <|-- ValueOfString
 
 
 interface Selection{
     - fitness: Fitness
 
-    + Selection(fitness: Fitness)
-    + choose(population: Vector<Agent>)
+    '+ Selection(fitness: Fitness)'
+    + choose(population: Vector<Agent>): void
 }
 class Proportionate{
     + choose(population: Vector<Agent>)
@@ -136,7 +141,10 @@ Selection <|-- GenReplacement
 Selection <|-- Elitism
 
 
-interface Reproduction{}
+interface Reproduction{
+    repopulate(population): void
+
+}
 
 interface Visitor{
     visit(fitnessFunc: ValueOfString)
