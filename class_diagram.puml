@@ -1,0 +1,151 @@
+@startuml
+!theme reddress-darkred
+
+class Simulation{
+    - populationSize: int
+    - population: Vector<Agents>
+    - time: float
+
+    - mutaionParams[]: float
+    - mutationFuncs[]: Mutation
+    - fitness: Fitness
+    - selectionFuncs[]: Selection
+    - reproductionFuncs[]: Reproduction
+    - loggers[]: Loggers
+
+    + initPopulation(): void
+    + run(): void
+
+}
+Simulation <-- Agent
+Simulation <-- Mutation
+Simulation <-- Fitness
+Simulation <-- Selection
+Simulation <-- Reproduction
+Simulation <-- Logger
+
+
+interface Agent{
+    genome: Genome
+}
+class BinaryBois{
+    genome: BinaryGenome
+}
+Agent <-- Genome
+Agent <|-- BinaryBois
+
+interface Genome{
+    genome: virtual
+}
+
+class TreeGenome{
+    genome: Node
+}
+class BinaryGenome{
+    genome: int[]
+}
+class TravlingSailsmenGenome{}
+Genome <|-- TreeGenome
+Genome <|-- BinaryGenome
+Genome <|-- TravlingSailsmenGenome
+
+interface Mutation{
+    mutatePopulation(population: Vector<Agent>)
+}
+class Recombination{
+    mutatePopulation(population: Vector<Agent>)
+    mutateAgents(agent1: Agent, agent2: Agent)
+}
+class Inversion{
+    mutatePopulation(population: Vector<Agent>)
+    mutateAgent(agent: Agent)
+}
+class Insertion{
+    mutatePopulation(population: Vector<Agent>)
+    mutateAgents(agent1: Agent, agent2: Agent)
+}
+Mutation <|-- Recombination
+Mutation <|-- Inversion
+Mutation <|-- Insertion
+
+' allows for changing fitness function over time
+interface Fitness{
+    - fitnessValues: sortedMap
+
+    + eval(population: Vector<Agent>)
+    - evalGenene(g: Genome): float
+    - sort(population: Vector<Agent>)
+}
+class Combination{
+    'uses weighted sum of multiple fitness funcs demo?'
+}
+class MostOnes{
+    + eval(population: Vector<BinaryBois>)
+    - evalGenene(g: BinaryGenome): float
+    - sort(population: Vector<BinaryBois>)
+}
+class ValueOfString{
+    - max
+    - min
+    - avg
+
+    + eval(population: Vector<BinaryBois>)
+    - evalGenene(g: BinaryGenome): float
+    - sort(population: Vector<BinaryBois>)
+
+    'just to demo visitor design patern: https://refactoring.guru/design-patterns/visitor'
+    + accept(v: Visitor)
+}
+Fitness <|-- MostOnes
+Fitness <|-- ValueOfString
+
+
+interface Selection{
+    - fitness: Fitness
+
+    + Selection(fitness: Fitness)
+    + choose(population: Vector<Agent>)
+}
+class Proportionate{
+    + choose(population: Vector<Agent>)
+}
+class Roulette{
+    + choose(population: Vector<Agent>)
+}
+class Ranked{
+    + choose(population: Vector<Agent>)
+}
+class Truncate{
+    + choose(population: Vector<Agent>)
+}
+class Tournament{
+    + choose(population: Vector<Agent>)
+}
+class GenReplacement{
+    + choose(population: Vector<Agent>)
+}
+class Elitism{
+    + choose(population: Vector<Agent>)
+}
+Selection <|-- Proportionate
+Selection <|-- Roulette
+Selection <|-- Ranked
+Selection <|-- Truncate
+Selection <|-- Tournament
+Selection <|-- GenReplacement
+Selection <|-- Elitism
+
+
+interface Reproduction{}
+
+interface Visitor{
+    visit(fitnessFunc: ValueOfString)
+}
+ValueOfString <-- Visitor
+interface Logger{
+}
+class CSVLogger{}
+Logger <|-- CSVLogger
+Visitor <|-down- CSVLogger
+
+@enduml
