@@ -13,6 +13,9 @@
 namespace GenAlg {
 
     class Recombination: public Mutation{
+    public:
+        Recombination();
+
         void mutate(std::vector<Agent> population) override;
 
     };

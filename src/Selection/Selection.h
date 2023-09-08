@@ -5,8 +5,8 @@
 #ifndef GENETIC_ALGORITHM_DEMO_SELECTION_H
 #define GENETIC_ALGORITHM_DEMO_SELECTION_H
 
-#include "Fitness/Fitness.h"
-#include "Agents/Agent.h"
+#include "../Fitness/Fitness.h"
+#include "../Agents/Agent.h"
 
 #include <vector>
 

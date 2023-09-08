@@ -5,4 +5,10 @@
 #include "Recombination.h"
 
 namespace GenAlg {
+    Recombination::Recombination() {
+
+    }
+    void Recombination::mutate(std::vector<Agent> population) {
+
+    }
 } // GenAlg

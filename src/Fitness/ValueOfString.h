@@ -8,13 +8,12 @@
 #include "../Agents/Agent.h"
 #include "../Genomes/Genome.h"
 #include "Fitness.h"
-#include "../Logging/Visitor.h"
 
 #include <vector>
 
 namespace GenAlg {
 
-    class ValueOfString: public Fitness, public Visitor{
+    class ValueOfString: public Fitness{
     private:
         int max = 0;
         int min = 0;
@@ -25,7 +24,6 @@ namespace GenAlg {
     public:
         void eval(std::vector<Agent> population);
 
-        void accept(Visitor v);
 
     };
 

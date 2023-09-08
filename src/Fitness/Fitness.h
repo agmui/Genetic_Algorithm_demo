@@ -5,8 +5,8 @@
 #ifndef GENETIC_ALGORITHM_DEMO_FITNESS_H
 #define GENETIC_ALGORITHM_DEMO_FITNESS_H
 
-#include "Agents/Agent.h"
-#include "Genomes/Genome.h"
+#include "../Agents/Agent.h"
+#include "../Genomes/Genome.h"
 
 #include <vector>
 

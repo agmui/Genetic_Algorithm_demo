@@ -11,7 +11,6 @@
 #include "Mutations/Mutation.h"
 #include "Fitness/Fitness.h"
 #include "Selection/Selection.h"
-// TODO: add loggers
 #include "Logging/Logger.h"
 
 #include <vector>
@@ -23,12 +22,10 @@ namespace GenAlg {
         std::vector<Agent> population;
         float time = 0;
 
-        //FIXME:
-//        float mutationParams[2] = MUTATION_PARAMS;
-        Mutation mutationFuncs[];
+        Mutation* mutationFuncs[1];
         Fitness* fitness;
-        Selection selectionFuncs[];
-        Reproduction reproductionFuncs[];
+        Selection* selectionFuncs[1];
+        Reproduction* reproductionFuncs[1];
         Logger loggers[];
 
     public:

@@ -11,18 +11,11 @@
 namespace GenAlg {
 
     Simulation::Simulation() {
-        mutationFuncs = {
-                new Recombination()
-        };
+        mutationFuncs[0] = new Recombination();
 
-        selectionFuncs = {
-                new Roulette(fitness)
-        };
+        selectionFuncs[0] = new Roulette(fitness);
 
-        reproductionFuncs = {
-                new LazyReproduction()
-        };
-
+        reproductionFuncs[0] = new LazyReproduction();
     }
 
     Simulation::~Simulation() {

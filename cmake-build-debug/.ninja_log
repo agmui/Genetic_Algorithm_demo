@@ -1,9 +1,0 @@
-# ninja log v5
-262	320	1694136780268756107	Genetic_Algorithm_demo	63d552119559efb3
-1	262	1694136780208754510	CMakeFiles/Genetic_Algorithm_demo.dir/src/main.cpp.o	22d5ef1ea9ac5d91
-0	19	1694140201167822954	build.ninja	fa9d8536932434dd
-1	85	1694136780028749718	CMakeFiles/Genetic_Algorithm_demo.dir/src/Simulation.cpp.o	904189e6624d7239
-1	10	1694136755952108802	CMakeFiles/Genetic_Algorithm_demo.dir/src/Logging/CSVLogger.cpp.o	890bd36ce68f51f3
-1	20	1694140501679822846	CMakeFiles/Genetic_Algorithm_demo.dir/src/Genomes/BinaryGenome.cpp.o	b25aae3d3bcf2ffa
-1	21	1694140501679822846	CMakeFiles/Genetic_Algorithm_demo.dir/src/Agents/BinaryBois.cpp.o	8900ff077ddada8e
-1	91	1694140501747824657	CMakeFiles/Genetic_Algorithm_demo.dir/src/Reproduction/LazyReproduction.cpp.o	dfea9c549e0119d2

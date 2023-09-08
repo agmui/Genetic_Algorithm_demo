@@ -10,7 +10,7 @@
 namespace GenAlg {
 
     class Visitor {
-        virtual void visit(ValueOfString fitnessFunc) = 0;
+//        virtual void visit(ValueOfString* fitnessFunc) = 0;
 
     };
 
