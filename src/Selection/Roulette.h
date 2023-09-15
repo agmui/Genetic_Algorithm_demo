@@ -8,20 +8,23 @@
 
 #include "../Fitness/Fitness.h"
 #include "../Agents/Agent.h"
+#include "../Logging/Logger.h"
 #include "Selection.h"
 
 #include <vector>
 
 namespace GenAlg {
 
-    class Roulette: public Selection {
+    template <typename T>
+    class Roulette: public Selection<T> {
     private:
-        Fitness* fitness;
+        Reproduction<T>* reproduction;
+        Logger* logger;
 
     public:
-        Roulette(Fitness* fitness);
+        Roulette(Reproduction<T>* reproduction, Logger* logger);
 
-        void choose(std::vector<Agent> population) override;
+        void choose(std::vector<T*> population) override;
 
     };
 

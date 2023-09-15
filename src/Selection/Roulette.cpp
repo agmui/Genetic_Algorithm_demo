@@ -5,10 +5,13 @@
 #include "Roulette.h"
 
 namespace GenAlg {
-    Roulette::Roulette(Fitness *fitness) {
 
-    }
-    void Roulette::choose(std::vector<Agent> population) {
+//    Roulette::Roulette(Reproduction *reproduction, Logger *logger) {
+//
+//    }
+//    void Roulette::choose(std::vector<Genome*> population) {
+//
+//    }
 
-    }
+
 } // GenAlg

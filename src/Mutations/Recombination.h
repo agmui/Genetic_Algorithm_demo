@@ -9,14 +9,17 @@
 #include "Mutation.h"
 
 #include "vector"
+#include "../Logging/Logger.h"
 
 namespace GenAlg {
 
-    class Recombination: public Mutation{
+    class Recombination: public Mutation<BinaryGenome>{
+    private:
+        Logger* logger;
     public:
-        Recombination();
+        Recombination(Logger* logger);
 
-        void mutate(std::vector<Agent> population) override;
+        void mutate(std::vector<BinaryGenome*> population) override;
 
     };
 

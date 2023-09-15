@@ -12,7 +12,6 @@ add_executable(Genetic_Algorithm_demo src/main.cpp
         src/Mutations/Mutation.h
         src/Fitness/Fitness.h
         src/Selection/Selection.h
-        src/Logging/Visitor.h
         src/Logging/Logger.h
         src/Logging/CSVLogger.cpp
         src/Logging/CSVLogger.h
@@ -30,4 +29,8 @@ add_executable(Genetic_Algorithm_demo src/main.cpp
         src/Fitness/ValueOfString.h
         src/Reproduction/Reproduction.h
         src/Reproduction/LazyReproduction.cpp
-        src/Reproduction/LazyReproduction.h)
+        src/Reproduction/LazyReproduction.h
+        src/Selection/Truncation.cpp
+        src/Selection/Truncation.h
+        src/Selection/Truncation.cpp
+        )

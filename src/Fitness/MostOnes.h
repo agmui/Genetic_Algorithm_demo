@@ -6,21 +6,25 @@
 #define GENETIC_ALGORITHM_DEMO_MOSTONES_H
 
 #include "../Agents/Agent.h"
-#include "../Genomes/Genome.h"
+#include "../Agents/BinaryBois.h"
+#include "../Genomes/BinaryGenome.h"
+#include "../Logging/Logger.h"
 #include "Fitness.h"
 
 #include <vector>
+#include <map>
 
 namespace GenAlg {
 
-    class MostOnes: public  Fitness{
+    class MostOnes: public Fitness<BinaryGenome>{
     private:
-//        std::sorted_map fitnessValues;
-        void sort(std::vector<Agent> population);
-        float evalGenome(Genome g) override;
+        std::multimap<int, BinaryGenome*> fitnessValues;
+        float evalGenome(BinaryGenome* g);
+        Logger* logger;
 
     public:
-        void eval(std::vector<Agent> population) override;
+        MostOnes(Logger* logger);
+        void eval(std::vector<BinaryGenome*> population) override;
 
     };
 

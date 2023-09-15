@@ -5,10 +5,4 @@
 #include "LazyReproduction.h"
 
 namespace GenAlg {
-    LazyReproduction::LazyReproduction() {
-
-    }
-    void LazyReproduction::repopulate(std::vector<Agent> population) {
-
-    }
 } // GenAlg

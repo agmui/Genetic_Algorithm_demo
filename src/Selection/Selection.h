@@ -7,16 +7,16 @@
 
 #include "../Fitness/Fitness.h"
 #include "../Agents/Agent.h"
+#include "../Reproduction/Reproduction.h"
 
 #include <vector>
 
 namespace GenAlg {
 
+    template<typename T>
     class Selection {
-    private:
-       Fitness* fitness;
     public:
-        virtual void choose(std::vector<Agent> population) = 0;
+        virtual void choose(std::vector<T*> population) = 0;
     };
 
 } // GenAlg

@@ -6,11 +6,12 @@
 #define GENETIC_ALGORITHM_DEMO_CSVLOGGER_H
 
 #include "Logger.h"
-#include "Visitor.h"
 
 namespace GenAlg {
 
-    class CSVLogger: public Logger, public Visitor{
+    class CSVLogger: public Logger{
+    public:
+        CSVLogger();
 
     };
 

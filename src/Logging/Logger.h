@@ -10,7 +10,6 @@ namespace GenAlg {
     class Logger {
 
     };
-
 } // GenAlg
 
 #endif //GENETIC_ALGORITHM_DEMO_LOGGER_H

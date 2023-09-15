@@ -11,13 +11,17 @@
 #include <vector>
 
 namespace GenAlg {
-
+    template <typename T>
     class Fitness {
-    private:
-        virtual float evalGenome(Genome g) = 0;
+//    private:
+//        virtual float evalGenome(Genome* g) = 0;
 
     public:
-        virtual void eval(std::vector<Agent> population) = 0;
+        /**
+         * evaluates and sorts all agents in the population
+         * @param population
+         */
+        virtual void eval(std::vector<T*> population) = 0;
 
     };
 

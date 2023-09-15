@@ -11,9 +11,10 @@
 
 namespace GenAlg {
 
+    template <typename T>
     class Mutation {
     public:
-        virtual void mutate(std::vector<Agent> population) = 0;
+        virtual void mutate(std::vector<T*> population) = 0;
 
     };
 

@@ -8,14 +8,21 @@
 #include "Reproduction.h"
 
 #include <vector>
+#include "../Logging/Logger.h"
 
 namespace GenAlg {
 
-    class LazyReproduction: public Reproduction{
-    public:
-        LazyReproduction();
+    template <typename T>
+    class LazyReproduction: public Reproduction<T>{
+    private:
+        Logger* logger;
 
-        void repopulate(std::vector<Agent> population) override;
+    public:
+        LazyReproduction(Logger* logger){};
+
+        void repopulate(std::vector<T*> population) override{
+
+        }
 
     };
 

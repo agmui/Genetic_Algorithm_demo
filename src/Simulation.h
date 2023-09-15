@@ -7,6 +7,7 @@
 
 #include "params.h"
 #include "Agents/Agent.h"
+#include "Agents/BinaryBois.h"
 #include "Reproduction/Reproduction.h"
 #include "Mutations/Mutation.h"
 #include "Fitness/Fitness.h"
@@ -19,14 +20,15 @@ namespace GenAlg {
     class Simulation {
     private:
         int populationSize = POPULATION_SIZE;
-        std::vector<Agent> population;
+//        std::vector<Agent*> population;
+        std::vector<BinaryGenome*> population;
         float time = 0;
 
-        Mutation* mutationFuncs[1];
-        Fitness* fitness;
-        Selection* selectionFuncs[1];
-        Reproduction* reproductionFuncs[1];
-        Logger loggers[];
+        Mutation<BinaryGenome>* mutationFuncs[1];
+        Fitness<BinaryGenome>* fitness;
+        Selection<BinaryGenome>* selectionFuncs[1];
+        Reproduction<BinaryGenome>* reproductionFuncs[1];
+        Logger* loggers[];
 
     public:
         Simulation();

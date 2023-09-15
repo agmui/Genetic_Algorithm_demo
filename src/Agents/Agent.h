@@ -6,11 +6,18 @@
 #define GENETIC_ALGORITHM_DEMO_AGENT_H
 
 #include "../Genomes/Genome.h"
+#include "../Fitness/Fitness.h"
+#include "../Genomes/BinaryGenome.h"
 
 namespace GenAlg {
 
+    template <typename T>
     class Agent {
-        Genome genome;
+
+    protected:
+        T* genome;
+    public:
+        T* getGenome(){ return genome; }
     };
 
 } // GenAlg

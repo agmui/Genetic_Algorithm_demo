@@ -9,7 +9,6 @@ namespace GenAlg {
 
     class Genome {
     public:
-        void* genome;
 
     };
 

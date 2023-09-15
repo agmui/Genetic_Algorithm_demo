@@ -7,12 +7,17 @@
 
 #include "Agent.h"
 #include "../Genomes/BinaryGenome.h"
+#include "../Logging/Logger.h"
 
 namespace GenAlg {
 
-    class BinaryBois: public Agent{
-        Genome* genome = new BinaryGenome();
-
+    class BinaryBois: public Agent<BinaryGenome*>{
+    private:
+        Logger* logger;
+    public:
+        BinaryBois(Logger* logger);
+        ~BinaryBois();
+//        BinaryGenome* getGenome(){ return genome; }
     };
 
 } // GenAlg

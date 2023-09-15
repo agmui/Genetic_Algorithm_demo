@@ -5,4 +5,7 @@
 #include "CSVLogger.h"
 
 namespace GenAlg {
+    CSVLogger::CSVLogger() {
+
+    }
 } // GenAlg

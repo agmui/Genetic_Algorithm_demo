@@ -11,9 +11,10 @@
 
 namespace GenAlg {
 
+    template <typename T>
     class Reproduction {
     public:
-        virtual void repopulate(std::vector<Agent> population) = 0;
+        virtual void repopulate(std::vector<T*> population) = 0;
 
     };
 
