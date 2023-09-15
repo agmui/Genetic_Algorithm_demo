@@ -5,7 +5,6 @@
 #ifndef GENETIC_ALGORITHM_DEMO_REPRODUCTION_H
 #define GENETIC_ALGORITHM_DEMO_REPRODUCTION_H
 
-#include "../Agents/Agent.h"
 
 #include "vector"
 

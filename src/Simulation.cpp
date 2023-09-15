@@ -7,7 +7,6 @@
 #include "Selection/Truncation.h"
 #include "Reproduction/LazyReproduction.h"
 #include "Logging/CSVLogger.h"
-#include "Agents/BinaryBois.h"
 #include "Fitness/MostOnes.h"
 
 #include<iostream>

@@ -6,7 +6,6 @@
 #define GENETIC_ALGORITHM_DEMO_SELECTION_H
 
 #include "../Fitness/Fitness.h"
-#include "../Agents/Agent.h"
 #include "../Reproduction/Reproduction.h"
 
 #include <vector>

@@ -6,8 +6,7 @@
 #define GENETIC_ALGORITHM_DEMO_SIMULATION_H
 
 #include "params.h"
-#include "Agents/Agent.h"
-#include "Agents/BinaryBois.h"
+#include "Genomes/BinaryGenome.h"
 #include "Reproduction/Reproduction.h"
 #include "Mutations/Mutation.h"
 #include "Fitness/Fitness.h"

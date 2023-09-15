@@ -5,8 +5,6 @@
 #ifndef GENETIC_ALGORITHM_DEMO_MOSTONES_H
 #define GENETIC_ALGORITHM_DEMO_MOSTONES_H
 
-#include "../Agents/Agent.h"
-#include "../Agents/BinaryBois.h"
 #include "../Genomes/BinaryGenome.h"
 #include "../Logging/Logger.h"
 #include "Fitness.h"

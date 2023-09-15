@@ -7,7 +7,6 @@
 
 
 #include "../Fitness/Fitness.h"
-#include "../Agents/Agent.h"
 #include "../Logging/Logger.h"
 #include "Selection.h"
 

@@ -7,7 +7,6 @@ add_executable(Genetic_Algorithm_demo src/main.cpp
         src/params.h
         src/Simulation.cpp
         src/Simulation.h
-        src/Agents/Agent.h
         src/Genomes/Genome.h
         src/Mutations/Mutation.h
         src/Fitness/Fitness.h
@@ -15,8 +14,6 @@ add_executable(Genetic_Algorithm_demo src/main.cpp
         src/Logging/Logger.h
         src/Logging/CSVLogger.cpp
         src/Logging/CSVLogger.h
-        src/Agents/BinaryBois.cpp
-        src/Agents/BinaryBois.h
         src/Genomes/BinaryGenome.cpp
         src/Genomes/BinaryGenome.h
         src/Mutations/Recombination.cpp
