@@ -1,30 +1,31 @@
 //
-// Created by agmui on 9/7/23.
+// Created by agmui on 1/1/24.
 //
 
 #ifndef GENETIC_ALGORITHM_DEMO_LAZYREPRODUCTION_H
 #define GENETIC_ALGORITHM_DEMO_LAZYREPRODUCTION_H
 
-#include "Reproduction.h"
-
 #include <vector>
-#include "../Logging/Logger.h"
+#include "Reproduction.h"
+#include "../GenAlgInterface.h"
 
 namespace GenAlg {
 
-    template <typename T>
-    class LazyReproduction: public Reproduction<T>{
+    template<class T>
+    class GenAlgInterface;
+
+    template<class T>
+    class LazyReproduction : public Reproduction<T>{
     private:
-        Logger* logger;
-
+        GenAlgInterface<T>* genAlgInterface;
     public:
-        LazyReproduction(Logger* logger){};
+        LazyReproduction(GenAlgInterface<T>* genAlgInterface):genAlgInterface(genAlgInterface){};
+        ~LazyReproduction();
 
-        void repopulate(std::vector<T*> population) override{
-
-        }
+        void reproduction(std::vector<T*>) override;
 
     };
+
 
 } // GenAlg
 

@@ -1,44 +1,31 @@
 //
-// Created by agmui on 9/7/23.
+// Created by agmui on 1/1/24.
 //
 
 #ifndef GENETIC_ALGORITHM_DEMO_SIMULATION_H
 #define GENETIC_ALGORITHM_DEMO_SIMULATION_H
 
-#include "params.h"
-#include "Genomes/BinaryGenome.h"
-#include "Reproduction/Reproduction.h"
-#include "Mutations/Mutation.h"
-#include "Fitness/Fitness.h"
-#include "Selection/Selection.h"
-#include "Logging/Logger.h"
-
-#include <vector>
+#include "GenAlgInterface.h"
+#include "vector"
 
 namespace GenAlg {
+
+    template<class T>
     class Simulation {
     private:
-        int populationSize = POPULATION_SIZE;
-//        std::vector<Agent*> population;
-        std::vector<BinaryGenome*> population;
-        float time = 0;
-
-        Mutation<BinaryGenome>* mutationFuncs[1];
-        Fitness<BinaryGenome>* fitness;
-        Selection<BinaryGenome>* selectionFuncs[1];
-        Reproduction<BinaryGenome>* reproductionFuncs[1];
-        Logger* loggers[];
+        GenAlgInterface<T>* genAlgFramework;
+        std::vector<T*> population;
 
     public:
-        Simulation();
-
+        explicit Simulation(GenAlgInterface<T>* genAlgFramework);
         ~Simulation();
-
         void initPopulation();
         void run();
-
-
     };
+
+
+
 } // GenAlg
+
 
 #endif //GENETIC_ALGORITHM_DEMO_SIMULATION_H

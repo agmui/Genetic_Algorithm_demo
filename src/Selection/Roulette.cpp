@@ -1,17 +1,11 @@
 //
-// Created by agmui on 9/7/23.
+// Created by agmui on 1/1/24.
 //
 
 #include "Roulette.h"
 
 namespace GenAlg {
-
-//    Roulette::Roulette(Reproduction *reproduction, Logger *logger) {
-//
-//    }
-//    void Roulette::choose(std::vector<Genome*> population) {
-//
-//    }
-
-
+    template<class T>
+    void Roulette<T>::selection(std::vector<T *> population) {
+    }
 } // GenAlg

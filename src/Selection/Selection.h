@@ -1,21 +1,19 @@
 //
-// Created by agmui on 9/7/23.
+// Created by agmui on 1/1/24.
 //
 
 #ifndef GENETIC_ALGORITHM_DEMO_SELECTION_H
 #define GENETIC_ALGORITHM_DEMO_SELECTION_H
 
-#include "../Fitness/Fitness.h"
-#include "../Reproduction/Reproduction.h"
-
 #include <vector>
 
 namespace GenAlg {
 
-    template<typename T>
+    template<class T>
     class Selection {
     public:
-        virtual void choose(std::vector<T*> population) = 0;
+        virtual void selection(std::vector<T*> population);
+
     };
 
 } // GenAlg

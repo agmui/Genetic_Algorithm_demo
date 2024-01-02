@@ -1,22 +1,19 @@
 //
-// Created by agmui on 9/7/23.
+// Created by agmui on 1/1/24.
 //
 
-#ifndef GENETIC_ALGORITHM_DEMO_REPRODUCTION_H
-#define GENETIC_ALGORITHM_DEMO_REPRODUCTION_H
-
-
-#include "vector"
+#ifndef GENETIC_ALGORITHM_DEMO_REPOPULATION_H
+#define GENETIC_ALGORITHM_DEMO_REPOPULATION_H
 
 namespace GenAlg {
 
-    template <typename T>
+    template<class T>
     class Reproduction {
     public:
-        virtual void repopulate(std::vector<T*> population) = 0;
+        virtual void reproduction(std::vector<T*> population);
 
     };
 
 } // GenAlg
 
-#endif //GENETIC_ALGORITHM_DEMO_REPRODUCTION_H
+#endif //GENETIC_ALGORITHM_DEMO_REPOPULATION_H
