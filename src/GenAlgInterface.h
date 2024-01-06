@@ -10,6 +10,7 @@
 #include "Selection/Selection.h"
 #include "Reproduction/LazyReproduction.h"
 #include "Selection/Roulette.h"
+#include "Selection/Truncation.h"
 
 namespace GenAlg {
 
@@ -19,14 +20,14 @@ namespace GenAlg {
     template<class T>
     class GenAlgInterface {
     public:
-        const int seed = 69;
-        const int epochs = 100;
-        static constexpr int populationSize = 100;
+        int seed = 69;
+        int epochs = 100;
+        int populationSize = 100;
 
-        virtual void fitness(std::vector<T*> population);
-        virtual void mutation(std::vector<T*> population);
+        virtual void fitness(std::vector<T*>& population) = 0;
+        virtual void mutation(std::vector<T*>& population) = 0;
+        Selection<T>* selectionFunc = new Truncation<T>(); //new Roulette<T>();
         Reproduction<T>* reproductionFunc = new LazyReproduction<T>(this);
-        Selection<T>* selectionFunc = new Roulette<T>();
 
     };
 

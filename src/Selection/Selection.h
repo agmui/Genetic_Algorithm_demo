@@ -12,7 +12,7 @@ namespace GenAlg {
     template<class T>
     class Selection {
     public:
-        virtual void selection(std::vector<T*> population);
+        virtual void selection(std::vector<T*>& population) = 0;
 
     };
 

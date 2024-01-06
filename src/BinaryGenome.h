@@ -14,6 +14,7 @@ namespace GenAlg {
     private:
         char genotype;
     public:
+
         BinaryGenome();
 
         ~BinaryGenome() = default;

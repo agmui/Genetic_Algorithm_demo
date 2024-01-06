@@ -15,6 +15,11 @@ namespace GenAlg {
 
     };
 
+    template<class T>
+    void Roulette<T>::selection(std::vector<T *> population) {
+        //TODO:
+    }
+
 
 } // GenAlg
 

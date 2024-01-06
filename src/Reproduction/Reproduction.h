@@ -10,7 +10,7 @@ namespace GenAlg {
     template<class T>
     class Reproduction {
     public:
-        virtual void reproduction(std::vector<T*> population);
+        virtual void reproduction(std::vector<T *>& population) = 0;
 
     };
 

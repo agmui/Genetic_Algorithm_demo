@@ -5,8 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Genetic_Algorithm_demo src/main.cpp
         src/Simulation.h
-        src/Simulation.cpp
-
 #        src/Logging/Logger.h
 #        src/Logging/CSVLogger.cpp
 #        src/Logging/CSVLogger.h
@@ -27,14 +25,11 @@ add_executable(Genetic_Algorithm_demo src/main.cpp
         src/GenAlgInterface.h
         src/Reproduction/Reproduction.h
         src/Reproduction/LazyReproduction.h
-        src/Reproduction/LazyReproduction.cpp
         src/Selection/Selection.h
-        src/Selection/Roulette.cpp
         src/Selection/Roulette.h
         src/BinaryGenome.cpp
         src/BinaryGenome.h
         src/BinayGenAlg.cpp
         src/BinaryGenAlg.h
-        src/Selection/Truncation.cpp
         src/Selection/Truncation.h
 )

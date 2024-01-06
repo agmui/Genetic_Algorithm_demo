@@ -7,19 +7,32 @@
 
 #include <vector>
 #include "Selection.h"
+#include "stdio.h"
 
 namespace GenAlg {
 
 
     template<class T>
-    class Truncation : public Selection<T>{
+    class Truncation : public Selection<T> {
     private:
         int eliteNum;
     public:
-        Truncation(int eliteNum=1): eliteNum(eliteNum){};
-        void selection(std::vector<T*> population) override;
+        Truncation(int eliteNum = 1) : eliteNum(eliteNum) {};
+
+        void selection(std::vector<T *>& population) override;
 
     };
+
+    template<class T>
+    void Truncation<T>::selection(std::vector<T *>& population) {
+//        int popSize = population.size();
+//        for (int i = popSize-1; i > eliteNum; --i) {
+        if(population.size()>1){
+            population.erase(population.begin()+eliteNum, population.end());
+            population.resize(eliteNum);
+        }
+//        }
+    }
 
 
 } // GenAlg
